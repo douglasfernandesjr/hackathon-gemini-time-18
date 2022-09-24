@@ -44,7 +44,7 @@ function RestaurantesPage() {
 
       {restaurantesBaratinho?.map(restaurante => (
         
-        <Grid container spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+        <Grid className="cardRestaurante" key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           
           <div className="img-rest">
             <Grid item xs={4}> 
@@ -53,7 +53,7 @@ function RestaurantesPage() {
           </div>
           <div className='rest-info'>
             <Grid item xs={4}>        
-              <h4>{restaurante.nome}</h4>
+              <span>{restaurante.nome}</span>
               <p>{restaurante.distancia}</p>
               <p className="nota" ><Star fontSize="small" />{restaurante.nota}</p>
               <p>{restaurante.tempo_medio}</p>
