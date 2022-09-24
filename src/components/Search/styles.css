@@ -7,5 +7,6 @@
 .searchBar input {
     border: none;
     background-color: #DEDDDD;
+    width: 100%;
 }
 
