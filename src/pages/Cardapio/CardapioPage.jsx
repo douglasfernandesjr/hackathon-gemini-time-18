@@ -1,4 +1,4 @@
-import { Container, Typography, CircularProgress, Grid, Card, Box,CardActions,CardContent, CardMedia } from "@material-ui/core";
+import { Container, Typography, CircularProgress, Grid, Card, Box,CardActions,CardContent, CardMedia, Divider } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getDetalhes } from "../../services/detalhes.service";
 import { useParams } from "react-router-dom"
@@ -64,29 +64,31 @@ function CardapioPage() {
               <Typography variant="h6">
               {item.categoria}             
               </Typography>
+              <br />
               {item.itens?.map((prato) => (
-                <Card sx={{ display: 'flex', flexDirection: 'row'}}>
+                <><Card sx={{ display: 'flex' }}>
                   <CardMedia
-                    component="img"                
+                    component="img"
                     image={prato.imagem}
-                    alt={prato.nome}                    
-                  />
+                    alt={prato.nome} />
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                     <CardContent sx={{ flex: '0 1 auto' }}>
                       <Typography component="div" variant="h6">
                         {prato.nome}
-                      </Typography>                     
-                      <Typography variant="caption" color="text.secondary">                    
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
                         {prato.descricao}
                       </Typography>
                       <br />
-                      <Typography variant="caption" color="text.secondary">                    
+                      <Typography align="right" variant="caption" color="text.secondary">
                         R${prato.valor}
                       </Typography>
-                    </CardContent>  
+                    </CardContent>
                   </Box>
-                </Card>
+                </Card><br /><Divider /></>
+               
               ))}
+              <Divider />
           </Container>            
         ))}
         
