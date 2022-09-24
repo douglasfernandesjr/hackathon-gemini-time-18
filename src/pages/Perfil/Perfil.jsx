@@ -1,19 +1,16 @@
 import React from "react";
-import { getDetalhes } from "../../services/detalhes.service";
-import { useEffect, useState } from "react";
-import {
-  CircularProgress,
+
+import {  
   Container,
   Typography,
-  Fab,
   Button,
   Avatar,
   Card,
   CardActions,
   CardContent
 } from "@material-ui/core";
-import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import './Perfil.css'
+
 
 
 
@@ -52,7 +49,7 @@ function Perfil() {
 
        return (
         <Container>          
-          <Card className="cardProfile" variant="outlined">{card}</Card>
+          <Card className="cardProfile" variant="outlined">{card}</Card>          
         </Container>
     )
 

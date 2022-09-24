@@ -9,10 +9,7 @@ height: 89px;
 }
 
 .cardRestaurante{
-    position: absolute;
-    left: 21px;
-    top: 124px;
-    color: #828282;
+   margin-top: 10px;
 }
 
 .detalhesRestaurante{
@@ -26,6 +23,4 @@ height: 89px;
 .nota {
     color: #ED6E27
 }
-
-
 
