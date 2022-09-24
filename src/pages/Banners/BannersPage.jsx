@@ -10,6 +10,8 @@ import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import { getAllBanners } from "../../services/banner.service";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import SearchBar from "../../components/Search";
+
 
 function BannersPage() {
   const navigate = useNavigate();
@@ -44,6 +46,7 @@ function BannersPage() {
 
   return (
     <div className="full-height" style={{backgroundColor: selectedBanner['background-color']}}>
+      
       <Container>
         <div className="title-home">
           <Typography
@@ -83,6 +86,7 @@ function BannersPage() {
 
       </Container>
       <img className="main-image" src={selectedBanner.imagem} alt={selectedBanner.nome} />
+      <SearchBar />
     </div>
   );
 }
