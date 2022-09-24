@@ -9,10 +9,8 @@ height: 89px;
 }
 
 .cardRestaurante{
+   margin-top: 10px;
     font-family: 'Ubuntu';
-    position: absolute;
-    left: 21px;
-    top: 124px;
     color: #828282;
 }
 
