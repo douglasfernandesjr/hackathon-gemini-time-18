@@ -55,9 +55,10 @@ function CardapioPage() {
                     </div>
                 </div>
             </div>
-            <p className="descricao">{descricao}</p>
-            <p className="endereco">{endereco}</p>
+           
         </div>
+        <p className="descricao">{descricao}</p>
+        <p className="endereco">{endereco}</p>
         <SearchBar />
         {cardapio?.map((item) => (
             <Container>
