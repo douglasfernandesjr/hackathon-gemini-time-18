@@ -1,7 +1,7 @@
 import { Container, Typography, CircularProgress, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
-import {useParams} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 import "./style.css";
 
 function RestaurantesPage() {
@@ -12,7 +12,7 @@ function RestaurantesPage() {
   const [loading, setLoading] = useState(true);
 
   const {id} = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     getRestaurantes(id).then((response) => {
       setNomeCategoria(response.categoria)
@@ -34,23 +34,36 @@ function RestaurantesPage() {
           <CircularProgress color="primary" />
         </div>
       )}
+
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
+        <Typography className="price" variant="body1" color="primary">
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
+
       {restaurantesBaratinho?.map(restaurante => (
-        <Grid container spacing={2}  key={restaurante.id}>
-          <Grid item xs={4}> 
-            <img src={restaurante.imagem} />
-          </Grid>
-          <Grid item xs={4}>        
-            {restaurante.nome} 
-            {restaurante.distancia}
-            {restaurante.nota}
-            {restaurante.tempo_medio} - {restaurante.valor_entrega}
-         </Grid>
-        </Grid>        
+        
+        <Grid container spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+          
+          <div className="img-rest">
+            <Grid item xs={4}> 
+              <img className="img" src={restaurante.imagem} />
+            </Grid>
+          </div>
+          <div className='rest-info'>
+            <Grid item xs={4}>        
+              <h4>{restaurante.nome}</h4>
+              <p>{restaurante.distancia}</p>
+              <p className="nota" >{restaurante.nota}</p>
+              <p>{restaurante.tempo_medio}</p>
+              <p>{restaurante.valor_entrega}</p>
+            </Grid>
+         </div>  
+        </Grid>
+        
+        
+
+
       ))}
       <div className="sub-header">
         <Typography variant="body1" color="primary">
@@ -58,18 +71,24 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <Grid container spacing={2}  key={restaurante.id}>
-          <Grid item xs={4}>
-            <img src={restaurante.imagem} />
-          </Grid>
-          <Grid item xs={8}>
-            {restaurante.nome}  
-            {restaurante.distancia}
-            {restaurante.nota}
-            {restaurante.tempo_medio} - {restaurante.valor_entrega}
-          </Grid>
-          
+        <section id='container'>
+        <Grid container spacing={2}  key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+          <div>
+            <Grid item xs={4}>
+              <img className="img" src={restaurante.imagem} />
+            </Grid>
+          </div>
+          <div className='rest-info'>
+            <Grid item xs={8}>
+              <h4>{restaurante.nome}</h4>
+              <p>{restaurante.distancia}</p>
+              <p className='nota'>{restaurante.nota}</p>
+              <p>{restaurante.tempo_medio}</p>
+              <p>{restaurante.valor_entrega}</p>
+            </Grid>
+          </div>
         </Grid>        
+        </section>
       ))}
       <div className="sub-header">
         <Typography variant="body1" color="primary">
@@ -77,12 +96,21 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <Grid xs={12}  key={restaurante.id}>
-          {restaurante.nome}          
-          <img src={restaurante.imagem} />
-          {restaurante.distancia}
-          {restaurante.nota}
-          {restaurante.tempo_medio} - {restaurante.valor_entrega}
+        <Grid container spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+          <div>
+            <Grid item xs={12}>
+              <img className="img" src={restaurante.imagem} />
+            </Grid>
+          </div> 
+          <div className='rest-info'>
+          <Grid item xs={4}>
+          <h4>{restaurante.nome}</h4>
+          <p>{restaurante.distancia}</p>
+          <p className="nota">{restaurante.nota}</p>
+          <p>{restaurante.tempo_medio}</p>
+          <p>{restaurante.valor_entrega}</p>
+          </Grid>
+          </div>         
         </Grid>        
       ))}
       

@@ -10,16 +10,16 @@ import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import { getAllBanners } from "../../services/banner.service";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-import SearchBar from "../../components/Search";
+
 
 
 function BannersPage() {
   const navigate = useNavigate();
   const [listaBanners, setListaBanners] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   const [loading, setLoading] = useState(true);
   const selectedBanner = listaBanners[index];
-  const isFirst = index === 0;
+  const isFirst = index === 3;
   const isLast = index === listaBanners.length - 1;
 
   const getBanners = async () => {
@@ -86,7 +86,6 @@ function BannersPage() {
 
       </Container>
       <img className="main-image" src={selectedBanner.imagem} alt={selectedBanner.nome} />
-      <SearchBar />
     </div>
   );
 }

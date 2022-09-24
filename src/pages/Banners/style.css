@@ -30,6 +30,7 @@
 .full-height .descricao {
   min-height: 140px;
   font-size: 12px;
+  width: 100%;
 }
 
 .full-height .actions {
@@ -56,3 +57,4 @@
   justify-content: center;
   margin: 30px 0 10px;
 }
+

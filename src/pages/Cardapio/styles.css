@@ -10,6 +10,11 @@ height: 89px;
 
 .cardRestaurante{
    margin-top: 10px;
+    font-family: 'Ubuntu';
+    position: absolute;
+    left: 21px;
+    top: 124px;
+    color: #828282;
 }
 
 .detalhesRestaurante{
@@ -18,9 +23,43 @@ height: 89px;
 
 .detalhesRestaurante p{
     font-size: 12px;
+    margin: 2px;
+}
+
+.detalhesRestaurante span{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 2px;
 }
 
 .nota {
+    display: flex;
+    align-items: center;
     color: #ED6E27
 }
 
+<<<<<<< HEAD
+=======
+.entrega {
+    display: flex;
+}
+
+.descricao {
+margin-top: 30px;
+width: 311px;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+}
+
+.endereco {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+
+
+>>>>>>> 3bb346e5e9e5727bf8f3ad3fa28fd4e88070ce0a

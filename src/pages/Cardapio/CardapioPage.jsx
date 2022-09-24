@@ -4,6 +4,7 @@ import { getDetalhes } from "../../services/detalhes.service";
 import { useParams } from "react-router-dom"
 import SearchBar from "../../components/Search/SearchBar"
 
+import { Star } from "@material-ui/icons";
 import "./styles.css";
 
 function CardapioPage() {
@@ -43,15 +44,16 @@ function CardapioPage() {
             <div className="img-detalhes">
                 <img className="imgRestaurante" src={imagemRestaurante} />
                 <div className="detalhesRestaurante">
-                    <h4>{nomeRestaurante}</h4>
-                    <p>{distanciaRestaurante}</p>
-                    <p className="nota">{nota}</p>
-                    <p>{tempoMedio}</p>
+                    <span>{nomeRestaurante}</span>
+                    <p>{distanciaRestaurante} km</p>
+                    <p className="nota"><Star fontSize="small" />{nota}</p>
+                    <div className="entrega"><p>{tempoMedio} - </p>
                     <p>{valorEntrega}</p>
+                    </div>
                 </div>
             </div>
-            <p>{descricao}</p>
-            <p>{endereco}</p>
+            <p className="descricao">{descricao}</p>
+            <p className="endereco">{endereco}</p>
         </div>
         <SearchBar />
         {cardapio.map((item) => (
