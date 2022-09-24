@@ -71,15 +71,14 @@ function CardapioPage() {
               {item.categoria}             
               </Typography>
               {item.itens?.map((prato) => (
-                <Card sx={{ display: 'flex', flexDirection: 'row' }}>
+                <Card sx={{ display: 'flex', flexDirection: 'row'}}>
                   <CardMedia
                     component="img"                
                     image={prato.imagem}
-                    alt="Live from space album cover"
-                    className="imageCardapio"
+                    alt={prato.nome}                    
                   />
-                  <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                    <CardContent sx={{ flex: '1 0 auto' }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ flex: '0 1 auto' }}>
                       <Typography component="div" variant="h6">
                         {prato.nome}
                       </Typography>                     
