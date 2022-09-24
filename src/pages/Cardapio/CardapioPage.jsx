@@ -37,15 +37,15 @@ function CardapioPage() {
             <div className="img-detalhes">
                 <img class="imgRestaurante" src={imagemRestaurante} />
                 <div className="detalhesRestaurante">
-                    <h4>{nomeRestaurante}</h4>
-                    <p>{distanciaRestaurante}</p>
+                    <span>{nomeRestaurante}</span>
+                    <p>{distanciaRestaurante} km</p>
                     <p className="nota">{nota}</p>
                     <p>{tempoMedio}</p>
                     <p>{valorEntrega}</p>
                 </div>
             </div>
-            <p>{descricao}</p>
-            <p>{endereco}</p>
+            <p className="descricao">{descricao}</p>
+            <p className="endereco">{endereco}</p>
         </div>
     )
 }
