@@ -82,12 +82,13 @@ function CardapioPage() {
                     <CardContent sx={{ flex: '1 0 auto' }}>
                       <Typography component="div" variant="h6">
                         {prato.nome}
-                      </Typography>
-                      <Typography variant="subtitle1" color="text.secondary">                    
+                      </Typography>                     
+                      <Typography variant="caption" color="text.secondary">                    
                         {prato.descricao}
                       </Typography>
-                      <Typography variant="subtitle1" color="text.secondary">                    
-                        {prato.descricao}
+                      <br />
+                      <Typography variant="caption" color="text.secondary">                    
+                        R${prato.valor}
                       </Typography>
                     </CardContent>  
                   </Box>
