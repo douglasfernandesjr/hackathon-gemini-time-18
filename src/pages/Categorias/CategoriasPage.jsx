@@ -22,7 +22,7 @@ function CategoriasPage() {
 	};
 
 	useEffect(() => {
-		getCategorias();
+		getCategorias();		
 	}, []);
 	return (
 		<Container className="categorias">
@@ -43,8 +43,8 @@ function CategoriasPage() {
 							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
 						>
 							<img
-								src={categoria.imagem}
-								alt={categoria.nome}
+								src={categoria.imagem}								
+								alt={categoria.nome}								
 								className="imgCategory"
 							/>
 
