@@ -1,12 +1,11 @@
 .searchBar {
-    border-radius: 1px;
+    border-radius: 5px;
     display: flex;
-    background-color: lightgrey;
-    max-width: 500px;
+    background-color: #DEDDDD;
 }
 
 .searchBar input {
     border: none;
-    background-color: lightgrey;
+    background-color: #DEDDDD;
 }
 
