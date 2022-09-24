@@ -1,12 +1,8 @@
 import { Container, Typography, CircularProgress, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
-<<<<<<< HEAD
 import { Star } from "@material-ui/icons";
-import {useParams} from "react-router-dom"
-=======
 import {useNavigate, useParams} from "react-router-dom"
->>>>>>> d9e2b4c537a497a48d8ead9ff7f7f0b097dba9c2
 import "./style.css";
 
 function RestaurantesPage() {
@@ -59,7 +55,7 @@ function RestaurantesPage() {
             <Grid item xs={4}>        
               <h4>{restaurante.nome}</h4>
               <p>{restaurante.distancia}</p>
-              <p className="nota" >{restaurante.nota}</p>
+              <p className="nota" ><Star fontSize="small" />{restaurante.nota}</p>
               <p>{restaurante.tempo_medio}</p>
               <p>{restaurante.valor_entrega}</p>
             </Grid>
@@ -87,7 +83,7 @@ function RestaurantesPage() {
             <Grid item xs={8}>
               <h4>{restaurante.nome}</h4>
               <p>{restaurante.distancia}</p>
-              <p className='nota'>{restaurante.nota}</p>
+              <p className='nota'><Star fontSize="small" />{restaurante.nota}</p>
               <p>{restaurante.tempo_medio}</p>
               <p>{restaurante.valor_entrega}</p>
             </Grid>
@@ -111,7 +107,7 @@ function RestaurantesPage() {
           <Grid item xs={4}>
           <h4>{restaurante.nome}</h4>
           <p>{restaurante.distancia}</p>
-          <p className="nota">{restaurante.nota}</p>
+          <p className="nota"><Star fontSize="small" />{restaurante.nota}</p>
           <p>{restaurante.tempo_medio}</p>
           <p>{restaurante.valor_entrega}</p>
           </Grid>
