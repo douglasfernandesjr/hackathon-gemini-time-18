@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import BannersPage from "./pages/Banners";
+import CardapioPage from "./pages/Cardapio/CardapioPage";
 import CategoriasPage from "./pages/Categorias";
 import RestaurantesPage from "./pages/Restaurantes";
 
@@ -27,9 +28,10 @@ function App() {
       <ThemeProvider theme={themeCustom}>
         <Header />
         <Routes>
-          <Route path="/" exact element={<BannersPage />} />
-          <Route path="/categorias" exact element={<CategoriasPage />} />
-          <Route path="/restaurantes/:id" exact element={<RestaurantesPage />} />
+          <Route path="/" element={<BannersPage />} />
+          <Route path="/categorias" element={<CategoriasPage />} />
+          <Route path="/restaurantes/:id" element={<RestaurantesPage />} />
+          <Route path="/detalhes/:id" element={<CardapioPage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
