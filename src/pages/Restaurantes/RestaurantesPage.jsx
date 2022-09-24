@@ -34,23 +34,33 @@ function RestaurantesPage() {
           <CircularProgress color="primary" />
         </div>
       )}
+
       <div className="sub-header">
-        <Typography variant="body1" color="primary">
+        <Typography className="price" variant="body1" color="primary">
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
+
       {restaurantesBaratinho?.map(restaurante => (
         <Grid container spacing={2}  key={restaurante.id}>
-          <Grid item xs={4}> 
-            <img src={restaurante.imagem} />
-          </Grid>
-          <Grid item xs={4}>        
-            {restaurante.nome} 
-            {restaurante.distancia}
-            {restaurante.nota}
-            {restaurante.tempo_medio} - {restaurante.valor_entrega}
-         </Grid>
-        </Grid>        
+          <div className="img-rest">
+            <Grid item xs={4}> 
+              <img class="img" src={restaurante.imagem} />
+            </Grid>
+          </div>
+          <div className='rest-info'>
+            <Grid item xs={4}>        
+              <h4>{restaurante.nome}</h4>
+              <p>{restaurante.distancia}</p>
+              <p className="nota" >{restaurante.nota}</p>
+              <p>{restaurante.tempo_medio}</p>
+              <p>{restaurante.valor_entrega}</p>
+            </Grid>
+         </div>  
+        </Grid>
+        
+
+
       ))}
       <div className="sub-header">
         <Typography variant="body1" color="primary">
@@ -58,18 +68,24 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
+        <section id='container'>
         <Grid container spacing={2}  key={restaurante.id}>
-          <Grid item xs={4}>
-            <img src={restaurante.imagem} />
-          </Grid>
-          <Grid item xs={8}>
-            {restaurante.nome}  
-            {restaurante.distancia}
-            {restaurante.nota}
-            {restaurante.tempo_medio} - {restaurante.valor_entrega}
-          </Grid>
-          
+          <div>
+            <Grid item xs={4}>
+              <img className="img" src={restaurante.imagem} />
+            </Grid>
+          </div>
+          <div className='rest-info'>
+            <Grid item xs={8}>
+              <h4>{restaurante.nome}</h4>
+              <p>{restaurante.distancia}</p>
+              <p className='nota'>{restaurante.nota}</p>
+              <p>{restaurante.tempo_medio}</p>
+              <p>{restaurante.valor_entrega}</p>
+            </Grid>
+          </div>
         </Grid>        
+        </section>
       ))}
       <div className="sub-header">
         <Typography variant="body1" color="primary">
@@ -77,12 +93,21 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <Grid xs={12}  key={restaurante.id}>
-          {restaurante.nome}          
-          <img src={restaurante.imagem} />
-          {restaurante.distancia}
-          {restaurante.nota}
-          {restaurante.tempo_medio} - {restaurante.valor_entrega}
+        <Grid container spacing={2} key={restaurante.id}>
+          <div>
+            <Grid item xs={12}>
+              <img className="img" src={restaurante.imagem} />
+            </Grid>
+          </div> 
+          <div className='rest-info'>
+          <Grid item xs={4}>
+          <h4>{restaurante.nome}</h4>
+          <p>{restaurante.distancia}</p>
+          <p className="nota">{restaurante.nota}</p>
+          <p>{restaurante.tempo_medio}</p>
+          <p>{restaurante.valor_entrega}</p>
+          </Grid>
+          </div>         
         </Grid>        
       ))}
       

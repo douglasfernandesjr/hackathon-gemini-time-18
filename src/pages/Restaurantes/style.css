@@ -1,7 +1,37 @@
 .restaurantes .sub-header span {
   color: #DEDDDD;
+  left: 21px;
+  top: 124px;
 }
 
-.imageRestaurantes {
-  width: 100%;
+#container {
+  display: flex;
+  /* flex-direction: column; */
+  align-items:center;
+  
+}
+
+.sub-header {
+  padding: 24px;
+}
+
+.img-rest {
+  display: inline-block;
+}
+
+.rest-info {
+  background-color: #d9d9d9;
+  font-size: 12px;
+  width: 200px;
+  margin: 2px;
+  padding: 0 100px 0 0;
+}
+
+.img {
+  max-height: 90px;
+  max-width: 90px;
+}
+
+.nota {
+  color: #ED6E27
 }
