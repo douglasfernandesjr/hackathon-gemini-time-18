@@ -47,10 +47,11 @@ function Header() {
             </div>
           </Link>
           
-
-          <IconButton color="inherit" onClick={handleClick} edge="start">
-            <AccountCircle fontSize="large" />
-          </IconButton>
+          <Link to="/perfil">
+            <IconButton color="inherit" edge="start">
+              <AccountCircle fontSize="large" />
+            </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import BannersPage from "./pages/Banners";
 import CardapioPage from "./pages/Cardapio/CardapioPage";
 import CategoriasPage from "./pages/Categorias";
+import Perfil from "./pages/Perfil/Perfil";
 import RestaurantesPage from "./pages/Restaurantes";
 
 const themeCustom = createTheme({
@@ -32,6 +33,7 @@ function App() {
           <Route path="/categorias" element={<CategoriasPage />} />
           <Route path="/restaurantes/:id" element={<RestaurantesPage />} />
           <Route path="/detalhes/:id" element={<CardapioPage />} />
+          <Route path="/perfil" element={<Perfil />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
