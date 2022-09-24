@@ -49,7 +49,7 @@ function Header() {
           
           <Link to="/perfil">
             <IconButton color="inherit" edge="start">
-              <AccountCircle fontSize="large" />
+              <AccountCircle fontSize="large" className="logo-perfil"/>
             </IconButton>
           </Link>
         </Toolbar>
