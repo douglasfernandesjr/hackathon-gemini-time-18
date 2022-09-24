@@ -38,14 +38,8 @@ function CardapioPage() {
         })
     }, []);
 
-    {
-        if ({valorEntrega} === 0){
-            <p>Grátis</p>
-        } else {
-            <p>{valorEntrega}</p>
-        }
-    }
-
+    
+    
     return (
       <Container>
         <div className="cardRestaurante">
@@ -56,7 +50,7 @@ function CardapioPage() {
                     <p>{distanciaRestaurante} km</p>
                     <p className="nota"><Star fontSize="small" />{nota}</p>
                     <div className="entrega"><p>{tempoMedio} - </p>
-                    <p>{valorEntrega}</p>
+                    <p>{valorEntrega === 0 ? "Frete grátis" : valorEntrega}</p>
                     
                     </div>
                 </div>
