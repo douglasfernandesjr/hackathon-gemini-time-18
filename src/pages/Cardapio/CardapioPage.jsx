@@ -5,20 +5,29 @@ import {useParams} from "react-router-dom"
 import "./styles.css";
 
 function CardapioPage() {
-    const [nomeCategoria, setNomeCategoria] = useState([]);
-    const [restaurantesBaratinho, setRestaurantesBaratinho] = useState();
-    const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
-    const [restaurantesCaro, setRestaurantesCaro] = useState([]);
+    
     const [loading, setLoading] = useState(true);
   
-    const {id} = useParams();
-  
+    const [cardapio, setCardapio] = useState();
+    const [nomeCategoria, setNomeCategoria] = useState([]);
+    const [item, setItem] = useState([]);
+    const [nomeRestaurante, setNomeRestaurante] = useState();
+    const [tempoMedio, setTempoMedio] = useState();
+    const [valorEntrega, setValorEntrega] = useState();
+    const [nota, setNota] = useState();
+    const id = useParams();
     useEffect(() => {
         getDetalhes(id).then((response) => {
-            
-      })
-    }, []);
-
+          setCardapio(response.cardapio);  
+          setNomeCategoria(response.cardapio.categoria)
+          setItem(response.cardapio.categoria.itens);
+          setNomeRestaurante(response.nome);
+          setNota(response.nota);
+          setTempoMedio(response.tempo_medio);
+          setValorEntrega(response.valor_entrega);
+          console.log(id)
+        })
+      }, []);
 }
 
 export default CardapioPage;
