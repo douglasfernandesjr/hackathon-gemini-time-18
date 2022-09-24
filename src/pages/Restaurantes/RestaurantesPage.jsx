@@ -58,7 +58,7 @@ function RestaurantesPage() {
               <p className="nota" ><Star fontSize="small" />{restaurante.nota}</p>
               <div className="entrega">
               <p>{restaurante.tempo_medio} - </p>
-              <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
+              <p>Entrega: {restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
               </div>
             </div>
          </div>  
@@ -68,11 +68,13 @@ function RestaurantesPage() {
 
 
       ))}
+
       <div className="sub-header">
         <Typography variant="body1" color="primary">
           No Preço <span>(</span>$ $ $<span> $ $)</span>
         </Typography>
       </div>
+
       {restaurantesNoPreco?.map(restaurante => (
         <section id='container'>
         <Grid container spacing={2} className="cardRestaurante" key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
@@ -87,7 +89,7 @@ function RestaurantesPage() {
               <p>{restaurante.distancia}</p>
               <p className='nota'><Star fontSize="small" />{restaurante.nota}</p>
               <p>{restaurante.tempo_medio}</p>
-              <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
+              <p> Entrega: {restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
             </div>
           </div>
         </Grid>        
@@ -99,6 +101,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
+        <section id='container'>
         <Grid container className="cardRestaurante" spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           <div>
             <Grid item xs={4}>
@@ -106,15 +109,16 @@ function RestaurantesPage() {
             </Grid>
           </div> 
           <div className='rest-info'>
-          <Grid item xs={4}>
-          <h4>{restaurante.nome}</h4>
-          <p>{restaurante.distancia}</p>
-          <p className="nota"><Star fontSize="small" />{restaurante.nota}</p>
-          <p>{restaurante.tempo_medio}</p>
-          <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
-          </Grid>
-          </div>         
-        </Grid>        
+            <div>
+              <span>{restaurante.nome} km</span>
+              <p>{restaurante.distancia}</p>
+              <p className='nota'><Star fontSize="small" />{restaurante.nota}</p>
+              <p>{restaurante.tempo_medio}</p>
+              <p>Entrega: {restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
+            </div>
+          </div>  
+        </Grid>
+        </section>        
       ))}
       
     </Container>
