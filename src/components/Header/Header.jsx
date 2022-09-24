@@ -33,13 +33,6 @@ function Header() {
             MenuListProps={{ disablePadding: true }}
             className="paper"
           >
-            <Link to="/" className="linkMenu">
-              <MenuItem onClick={handleClose} className="menu">
-                <Typography variant="h6">
-                  Início
-                </Typography>  
-              </MenuItem>
-            </Link>
             <Link to="/categorias" className="linkMenu">
               <MenuItem onClick={handleClose} className="menu">
                 <Typography variant="h6">
@@ -48,9 +41,12 @@ function Header() {
               </MenuItem>
             </Link>
           </Menu>
-          <div className="logo">
-            <span>iterisFood</span>
-          </div>
+          <Link to="/" className="logo"> 
+            <div className="logo">
+              <span>iterisFood</span>
+            </div>
+          </Link>
+          
 
           <IconButton color="inherit" onClick={handleClick} edge="start">
             <AccountCircle fontSize="large" />
