@@ -43,13 +43,8 @@ function CategoriasPage() {
 							onClick={() => navigate(`/restaurantes/${categorias.id}`)}
 						>
 							<img
-<<<<<<< HEAD
-								src={categoria.imagem}								
-								alt={categoria.nome}								
-=======
 								src={categorias.imagem + '.png'}
 								alt={categorias.nome}
->>>>>>> f21734f105e2912fbed94a1733960a9878a4b9fb
 								className="imgCategory"
 							/>
 
