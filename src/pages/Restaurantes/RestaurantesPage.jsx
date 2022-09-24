@@ -75,7 +75,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesNoPreco?.map(restaurante => (
         <section id='container'>
-        <Grid container spacing={2}  key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+        <Grid container spacing={2} className="cardRestaurante" key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           <div>
             <Grid item xs={4}>
               <img className="img" src={restaurante.imagem} />
@@ -99,7 +99,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <Grid container spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+        <Grid container className="cardRestaurante" spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           <div>
             <Grid item xs={12}>
               <img className="img" src={restaurante.imagem} />
