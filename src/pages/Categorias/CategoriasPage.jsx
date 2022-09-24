@@ -36,19 +36,19 @@ function CategoriasPage() {
 			)}
 
 			<Grid container spacing={1} className="gridContainer">
-				{categorias.map((categoria) => (
-					<Grid item xs={4} key={categoria.id}>
+				{categorias.map((categorias) => (
+					<Grid item xs={4} key={categorias.id}>
 						<div
 							className="containerCategorias"
-							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
+							onClick={() => navigate(`/restaurantes/${categorias.id}`)}
 						>
 							<img
-								src={categoria.imagem}
-								alt={categoria.nome}
+								src={categorias.imagem + '.png'}
+								alt={categorias.nome}
 								className="imgCategory"
 							/>
 
-							<Typography className="textNames">{categoria.nome}</Typography>
+							<Typography className="textNames">{categorias.nome}</Typography>
 						</div>
 					</Grid>
 				))}
