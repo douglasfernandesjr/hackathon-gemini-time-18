@@ -10,7 +10,7 @@ import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import { getAllBanners } from "../../services/banner.service";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-import SearchBar from "../../components/Search";
+
 
 
 function BannersPage() {

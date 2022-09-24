@@ -1,7 +1,7 @@
 import { Container, Typography, CircularProgress, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
-import {useParams} from "react-router-dom"
+import {useNavigate, useParams} from "react-router-dom"
 import "./style.css";
 
 function RestaurantesPage() {
@@ -12,7 +12,7 @@ function RestaurantesPage() {
   const [loading, setLoading] = useState(true);
 
   const {id} = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     getRestaurantes(id).then((response) => {
       setNomeCategoria(response.categoria)
@@ -42,7 +42,9 @@ function RestaurantesPage() {
       </div>
 
       {restaurantesBaratinho?.map(restaurante => (
-        <Grid container spacing={2}  key={restaurante.id}>
+        
+        <Grid container spacing={2}  key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+          
           <div className="img-rest">
             <Grid item xs={4}> 
               <img class="img" src={restaurante.imagem} />
@@ -58,6 +60,7 @@ function RestaurantesPage() {
             </Grid>
          </div>  
         </Grid>
+        
         
 
 
