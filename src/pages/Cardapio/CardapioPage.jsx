@@ -33,6 +33,14 @@ function CardapioPage() {
         })
     }, []);
 
+    {
+        if ({valorEntrega} === 0){
+            <p>Grátis</p>
+        } else {
+            <p>{valorEntrega}</p>
+        }
+    }
+
     return (
         <div className="cardRestaurante">
             <div className="img-detalhes">
@@ -43,6 +51,7 @@ function CardapioPage() {
                     <p className="nota"><Star fontSize="small" />{nota}</p>
                     <div className="entrega"><p>{tempoMedio} - </p>
                     <p>{valorEntrega}</p>
+                    
                     </div>
                 </div>
             </div>

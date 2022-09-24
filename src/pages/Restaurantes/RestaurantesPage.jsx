@@ -1,6 +1,7 @@
 import { Container, Typography, CircularProgress, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
+import { Star } from "@material-ui/icons";
 import {useParams} from "react-router-dom"
 import "./style.css";
 
