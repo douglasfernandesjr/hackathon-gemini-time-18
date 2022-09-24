@@ -2,6 +2,7 @@ import { Container, Typography, CircularProgress, Grid } from "@material-ui/core
 import { useEffect, useState } from "react";
 import { getDetalhes } from "../../services/detalhes.service";
 import { useParams } from "react-router-dom"
+import { Star } from "@material-ui/icons";
 import "./styles.css";
 
 function CardapioPage() {
@@ -39,9 +40,10 @@ function CardapioPage() {
                 <div className="detalhesRestaurante">
                     <span>{nomeRestaurante}</span>
                     <p>{distanciaRestaurante} km</p>
-                    <p className="nota">{nota}</p>
-                    <p>{tempoMedio}</p>
+                    <p className="nota"><Star fontSize="small" />{nota}</p>
+                    <div className="entrega"><p>{tempoMedio} - </p>
                     <p>{valorEntrega}</p>
+                    </div>
                 </div>
             </div>
             <p className="descricao">{descricao}</p>

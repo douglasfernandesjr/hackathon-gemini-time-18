@@ -26,18 +26,25 @@ height: 89px;
 }
 
 .detalhesRestaurante span{
+    font-weight: 700;
     font-size: 14px;
+    line-height: 16px;
     margin: 2px;
 }
 
 .nota {
+    display: flex;
+    align-items: center;
     color: #ED6E27
+}
+
+.entrega {
+    display: flex;
 }
 
 .descricao {
 margin-top: 30px;
 width: 311px;
-height: 47px;
 font-weight: 400;
 font-size: 12px;
 line-height: 14px;
