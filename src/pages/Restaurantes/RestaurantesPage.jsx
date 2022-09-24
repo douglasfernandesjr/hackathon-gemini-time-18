@@ -101,7 +101,7 @@ function RestaurantesPage() {
       {restaurantesCaro?.map(restaurante => (
         <Grid container className="cardRestaurante" spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           <div>
-            <Grid item xs={12}>
+            <Grid item xs={4}>
               <img className="img" src={restaurante.imagem} />
             </Grid>
           </div> 
