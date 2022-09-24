@@ -56,3 +56,8 @@ height: 89px;
   display: flex;
 }
 
+.rest-info p{
+  font-size: 12px;
+    margin: 2px;
+}
+

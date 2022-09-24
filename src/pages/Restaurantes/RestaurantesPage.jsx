@@ -57,7 +57,7 @@ function RestaurantesPage() {
               <p>{restaurante.distancia} </p>
               <p className="nota" ><Star fontSize="small" />{restaurante.nota}</p>
               <div className="entrega">
-              <p>{restaurante.tempo_medio}</p>
+              <p>{restaurante.tempo_medio} - </p>
               <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
               </div>
             </div>
