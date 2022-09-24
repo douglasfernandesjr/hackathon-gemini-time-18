@@ -1,8 +1,12 @@
 import { Container, Typography, CircularProgress, Grid } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
+<<<<<<< HEAD
 import { Star } from "@material-ui/icons";
 import {useParams} from "react-router-dom"
+=======
+import {useNavigate, useParams} from "react-router-dom"
+>>>>>>> d9e2b4c537a497a48d8ead9ff7f7f0b097dba9c2
 import "./style.css";
 
 function RestaurantesPage() {
@@ -13,7 +17,7 @@ function RestaurantesPage() {
   const [loading, setLoading] = useState(true);
 
   const {id} = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     getRestaurantes(id).then((response) => {
       setNomeCategoria(response.categoria)
@@ -43,10 +47,12 @@ function RestaurantesPage() {
       </div>
 
       {restaurantesBaratinho?.map(restaurante => (
-        <Grid container spacing={2}  key={restaurante.id}>
+        
+        <Grid container spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
+          
           <div className="img-rest">
             <Grid item xs={4}> 
-              <img class="img" src={restaurante.imagem} />
+              <img className="img" src={restaurante.imagem} />
             </Grid>
           </div>
           <div className='rest-info'>
@@ -60,6 +66,7 @@ function RestaurantesPage() {
          </div>  
         </Grid>
         
+        
 
 
       ))}
@@ -70,7 +77,7 @@ function RestaurantesPage() {
       </div>
       {restaurantesNoPreco?.map(restaurante => (
         <section id='container'>
-        <Grid container spacing={2}  key={restaurante.id}>
+        <Grid container spacing={2}  key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           <div>
             <Grid item xs={4}>
               <img className="img" src={restaurante.imagem} />
@@ -94,7 +101,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <Grid container spacing={2} key={restaurante.id}>
+        <Grid container spacing={2} key={restaurante.id} onClick={() => navigate(`/detalhes/${restaurante.id}`)}>
           <div>
             <Grid item xs={12}>
               <img className="img" src={restaurante.imagem} />
