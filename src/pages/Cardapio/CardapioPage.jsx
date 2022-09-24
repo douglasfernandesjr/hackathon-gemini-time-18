@@ -65,12 +65,12 @@ function CardapioPage() {
             <p className="endereco">{endereco}</p>
         </div>
         <SearchBar />
-        {cardapio.map((item) => (
+        {cardapio?.map((item) => (
             <Container>
               <Typography variant="h6">
               {item.categoria}             
               </Typography>
-              {item.itens.map((prato) => (
+              {item.itens?.map((prato) => (
                 <Card sx={{ display: 'flex', flexDirection: 'row' }}>
                   <CardMedia
                     component="img"                
