@@ -52,13 +52,15 @@ function RestaurantesPage() {
             </Grid>
           </div>
           <div className='rest-info'>
-            <Grid item xs={4}>        
+            <div item xs={4}>        
               <span>{restaurante.nome}</span>
-              <p>{restaurante.distancia}</p>
+              <p>{restaurante.distancia} </p>
               <p className="nota" ><Star fontSize="small" />{restaurante.nota}</p>
+              <div className="entrega">
               <p>{restaurante.tempo_medio}</p>
-              <p>{restaurante.valor_entrega}</p>
-            </Grid>
+              <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
+              </div>
+            </div>
          </div>  
         </Grid>
         
@@ -80,13 +82,13 @@ function RestaurantesPage() {
             </Grid>
           </div>
           <div className='rest-info'>
-            <Grid item xs={8}>
-              <h4>{restaurante.nome}</h4>
+            <div>
+              <span>{restaurante.nome} km</span>
               <p>{restaurante.distancia}</p>
               <p className='nota'><Star fontSize="small" />{restaurante.nota}</p>
               <p>{restaurante.tempo_medio}</p>
-              <p>{restaurante.valor_entrega}</p>
-            </Grid>
+              <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
+            </div>
           </div>
         </Grid>        
         </section>
@@ -109,7 +111,7 @@ function RestaurantesPage() {
           <p>{restaurante.distancia}</p>
           <p className="nota"><Star fontSize="small" />{restaurante.nota}</p>
           <p>{restaurante.tempo_medio}</p>
-          <p>{restaurante.valor_entrega}</p>
+          <p>{restaurante.valor_entrega === 0 ? "Frete grátis" : restaurante.valor_entrega}</p>
           </Grid>
           </div>         
         </Grid>        

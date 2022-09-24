@@ -17,6 +17,7 @@
    font-family: 'Ubuntu';
    color: #828282;
    background-color: #D9D9D9;
+   line-height: 16px;
 }
 
 
@@ -51,5 +52,7 @@ height: 89px;
   color: #ED6E27
 }
 
-
+.entrega {
+  display: flex;
+}
 
